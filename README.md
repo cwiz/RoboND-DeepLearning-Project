@@ -105,6 +105,7 @@ def vgg16_unet(input_shape=(256,256,3), weights='imagenet'):
 * VGG16-UNET was hard to train to get decent results. With wrong learning rate or batch size > 4 network would always predict dominating class on all pixels
 * FCN-8 is surprisingly performant for it's weight (153 KB)
 * VGG16-UNET was trained on full-size images (224x224) while FCN-8 processes 128x128 images
+* Trained Model Weights [link](https://drive.google.com/open?id=1-k1X1IIjrWK1vunAJ9yvbGzLIYPGRax9)
 
 #### FCN-8 Model Metrics
 
