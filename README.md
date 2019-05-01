@@ -36,7 +36,7 @@ In this project I've experimented with 2 solutions: FCN-8 and VGG16-UNET. First 
 
 Core idea behind FCNs is to process input via bunch of convolutional layers and then apply transpose convolutions to build another image with same dimensions as original one but each pixel belonging to one of predefined categories. Typical architectures are described in Jupyter Notebook for each solution.
 
-### FCN-8 Model
+### FCN-8
 
 * Jupyter Notebook [link](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab.ipynb)
 
@@ -50,7 +50,7 @@ def fcn_model(inputs, num_classes):
     return layers.Conv2D(num_classes, 3, activation='softmax', padding='same')(l5)
 ```
 
-### VGG16-UNET Model
+### VGG16-UNET
 
 * Jupyter Notebook [link](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab-vgg16-unet.ipynb)
 * [Reference Implementation](https://github.com/HLearning/unet_keras)
