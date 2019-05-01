@@ -38,7 +38,7 @@ Core idea behind FCNs is to process input via bunch of convolutional layers and 
 
 ### FCN-8
 
-* Jupyter Notebook [link](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab.ipynb)
+* [Jupyter Notebook](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab.ipynb)
 
 ```python
 def fcn_model(inputs, num_classes):
@@ -52,7 +52,7 @@ def fcn_model(inputs, num_classes):
 
 ### VGG16-UNET
 
-* Jupyter Notebook [link](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab-vgg16-unet.ipynb)
+* [Jupyter Notebook](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab-vgg16-unet.ipynb)
 * [Reference Implementation](https://github.com/HLearning/unet_keras)
 * [Original Paper](https://arxiv.org/abs/1505.04597)
 
