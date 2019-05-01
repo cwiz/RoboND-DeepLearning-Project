@@ -124,7 +124,5 @@ def vgg16_unet(input_shape=(256,256,3), weights='imagenet'):
     global average intersection over union is 0.5178528667667336
 ```
 
-![results](https://github.com/cwiz/RoboND-Rover-Project/blob/master/output/minimum_requirements.PNG?raw=true "Results")
-
-Simulator [video](https://youtu.be/OMV4EAk9bng).
-Neural network output [video](https://www.youtube.com/watch?v=aP7xrh_0_5s&feature=youtu.beg).
+* Simulator [video](https://youtu.be/OMV4EAk9bng).
+* Neural network output [video](https://www.youtube.com/watch?v=aP7xrh_0_5s&feature=youtu.beg).
