@@ -37,7 +37,7 @@ import os
 import time
 from multiprocessing import Process, Manager, Queue
 import sched, time, threading
-from socketIO_client import SocketIO, LoggingNamespace
+from socketIO_client  import SocketIO, LoggingNamespace
 from PIL import Image
 from io import BytesIO
 from scipy import misc

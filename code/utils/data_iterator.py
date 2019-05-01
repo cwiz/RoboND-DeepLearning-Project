@@ -32,9 +32,8 @@ from glob import glob
 from scipy import misc
 
 import numpy as np
-from tensorflow.contrib.keras.python.keras.preprocessing.image import Iterator
-from tensorflow.contrib.keras.python.keras import backend as K
-
+from tensorflow.keras.preprocessing.image import Iterator
+from tensorflow.keras import backend as K
 
 def preprocess_input(x):
     x = x/255.
@@ -99,10 +98,10 @@ class BatchIteratorSimple(Iterator):
         mask_files = sorted(glob(os.path.join(data_folder, 'masks', '*.png')))
 
         if len(im_files) == 0:
-            raise ValueError('No image files found, check your image diractories')
+            raise ValueError('No image files found, check your train image diractory')
 
         if len(mask_files) == 0:
-            raise ValueError('No mask files found, check your mask directories')
+            raise ValueError('No mask files found, check your train mask directory')
 
         self.file_tuples = list(zip(im_files, mask_files))
         self.n = len(self.file_tuples)
@@ -110,16 +109,20 @@ class BatchIteratorSimple(Iterator):
         super(BatchIteratorSimple, self).__init__(self.n, batch_size, shuffle, seed)
 
 
-    def next(self):
+    def next(self, ia=None):
         """For python 2.x.
         Returns:
             The next batch.
         """
         # Keeps under lock only the mechanism which advances
         # the indexing of each batch.
-        with self.lock:
-          index_array, current_index, current_batch_size = next(
-              self.index_generator)
+        if ia is None:
+            with self.lock:
+                index_array = next(self.index_generator)
+                current_batch_size = len(index_array)
+        else:
+            index_array = ia
+            current_batch_size = len(ia)
         # The transformation of images is not under thread lock
         # so it can be done in parallel
         
@@ -149,8 +152,8 @@ class BatchIteratorSimple(Iterator):
                 if gt_image.shape[0] != self.image_shape[0]:
                     gt_image = misc.imresize(gt_image, self.image_shape)
 
-                #if self.shift_aug:
-                #    image, gt_image = shift_and_pad_augmentation(image, gt_image)
+                if self.shift_aug:
+                    image, gt_image = shift_and_pad_augmentation(image, gt_image)
 
                 image = preprocess_input(image.astype(np.float32))
                 batch_x[e,:,:,:] = image
@@ -158,7 +161,8 @@ class BatchIteratorSimple(Iterator):
 
 
         if not self.training:
-            return batch_x
+          return batch_x
 
         else:
-            return batch_x, batch_y
+          return batch_x, batch_y
+
