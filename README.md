@@ -110,21 +110,21 @@ def vgg16_unet(input_shape=(256,256,3), weights='imagenet'):
 #### FCN-8 Model Metrics
 
 ```
-    number of validation samples intersection over the union evaluated on 1184
-    average intersection over union for background is 0.9884829621796758
-    average intersection over union for other people is 0.333322344775126
-    average intersection over union for hero is 0.14917389097174866
-    global average intersection over union is 0.4903263993088502
+number of validation samples intersection over the union evaluated on 1184
+average intersection over union for background is 0.9884829621796758
+average intersection over union for other people is 0.333322344775126
+average intersection over union for hero is 0.14917389097174866
+global average intersection over union is 0.4903263993088502
 ```
 
 #### VGG16-UNET Model Metrics
 
 ```
-    number of validation samples intersection over the union evaluated on 1184
-    average intersection over union for background is 0.9910767980300638
-    average intersection over union for other people is 0.4067272314461133
-    average intersection over union for hero is 0.15575457082402383
-    global average intersection over union is 0.5178528667667336
+number of validation samples intersection over the union evaluated on 1184
+average intersection over union for background is 0.9910767980300638
+average intersection over union for other people is 0.4067272314461133
+average intersection over union for hero is 0.15575457082402383
+global average intersection over union is 0.5178528667667336
 ```
 
 * Simulator [video](https://youtu.be/OMV4EAk9bng).
