@@ -26,19 +26,19 @@ This project is introduction to Deep Learning for computer vision. it involves p
 
 ## Mathematical Models
 
-Semantic Segmentation Problem is categorizing each pixel in image into one of pre-trained categories. For Autonomous Driving (AD) these categories might be: Road, Pedestrians, other cars and building with typical category count in 20-50s. In case of a flying drone we are only dealing with 3 categories.
+Semantic Segmentation Problem is categorizing each pixel in image into one of pre-trained categories. For Autonomous Driving (AD) these categories might be: Road, Pedestrians, Other Cars and Buildings. In AD categoy count can be in 20-50s.
 
-Prior to widespread arrival of DNNs and CNNs it has been a challenging task with sub-human performance levels. Current approaches such as FCNs and it's derivations solve Semantic Segmentation on human level. For some applications, such as medicine, screening X-Rays for malign cells DNN approach comes close human-expert levels.
+In case of a flying drone we are only dealing with 3 categories: Hero, People and Foreground.
 
-In this project I've experimented with 2 solutions, FCN-8 and VGG16-UNET. First one is discussed in lab and second one is more recent one.
+Prior to widespread arrival of DNNs and CNNs Semantic Segmentation has been a challenging task. Current approaches such as FCNs solve Semantic Segmentation on human levels. For some applications, such as medicine FCN approach comes close to human-expert levels.
 
-Basic building block of visual cortex we're building is a [convolution](https://en.wikipedia.org/wiki/Convolutional_neural_network). Approaches we use involve processing input via bunch of convolutional layers and then applying transpose convolutions to build another image with same dimensions as original one.
+In this project I've experimented with 2 solutions: FCN-8 and VGG16-UNET. First one is discussed in lab and second one is more complex network based on [VGG16](https://neurohive.io/en/popular-networks/vgg16/).
 
-VGG16-UNET uses pre-trained VGG16 model as encoder and builds last couple of transpose convolution (decoder) layers on it.
+Core idea behind FCNs is to process input via bunch of convolutional layers and then apply transpose convolutions to build another image with same dimensions as original one but each pixel belonging to one of predefined categories. Typical architectures are described in Jupyter Notebook for each solution.
 
 ##### FCN-8 Model
 
-Refer to Jupyter Notebook for details [link](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab.ipynb)
+* Jupyter Notebook [link](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab.ipynb)
 
 ```python
 def fcn_model(inputs, num_classes):
@@ -52,7 +52,7 @@ def fcn_model(inputs, num_classes):
 
 ##### VGG16-UNET Model
 
-* Refer to Jupyter Notebook for details [link](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab-vgg16-unet.ipynb)
+* Jupyter Notebook [link](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab-vgg16-unet.ipynb)
 * [Reference Implementation](https://github.com/HLearning/unet_keras)
 * [Original Paper](https://arxiv.org/abs/1505.04597)
 
