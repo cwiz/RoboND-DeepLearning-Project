@@ -52,7 +52,9 @@ def fcn_model(inputs, num_classes):
 
 ##### VGG16-UNET Model
 
-Refer to Jupyter Notebook for details [link](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab-vgg16-unet.ipynb)
+* Refer to Jupyter Notebook for details [link](https://github.com/cwiz/RoboND-Segmentation-Lab/blob/master/code/segmentation_lab-vgg16-unet.ipynb)
+* [Reference Implementation](https://github.com/HLearning/unet_keras)
+* [Original Paper](https://arxiv.org/abs/1505.04597)
 
 ```python
 def vgg16_unet(input_shape=(256,256,3), weights='imagenet'):
