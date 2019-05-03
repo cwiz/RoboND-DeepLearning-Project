@@ -25,7 +25,7 @@ This project is introduction to Deep Learning for computer vision. it involves p
 
 ## Mathematical Models
 
-Semantic Segmentation Problem is categorizing each pixel in image into one of pre-trained categories. For Autonomous Driving (AD) these categories might be: Road, Pedestrians, Other Cars and Buildings. In AD categoy count can be in 20-50s.
+Semantic Segmentation Problem is defined as categorizing pixels in image into pre-defined categories. For example, in Autonomous Driving (AD) these categories might be: Road, Pedestrians, Other Cars and Buildings. In AD categoy count can be in 20-50s.
 
 In case of a flying drone we are only dealing with 3 categories: Hero, People and Foreground.
 
