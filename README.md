@@ -12,7 +12,6 @@ This project is introduction to Deep Learning for computer vision. it involves p
 
 ## Project Goals
 
-* Recap for Control Theory and PID-Control
 * Introduction to Deep Neural Networks (DNNs)
 * Introduction to vision processing with DNNs with Convolutional Networks (CNNs)
 * Introduction to Fully Convolutional Networks (FCN) for Semantic Segmentation 
